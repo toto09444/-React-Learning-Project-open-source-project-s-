@@ -21,7 +21,7 @@ Before you begin, make sure you have [Node.js](https://nodejs.org/) and [npm](ht
 3.Start the development server:
    ```bash
    npm start
-
+```
 
 
 
