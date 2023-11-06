@@ -1,4 +1,31 @@
 import React from 'react'
+
+const App = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default App
+
+
+/*
+
+import React from 'react'
+import EffectHook from './components/effectHook'
+
+export default function App() {
+  return (
+    <div>
+      <EffectHook />
+    </div>
+  )
+}
+
+*/
+/*
 import TachesGestion from './components/tachesGestion'
 
 
@@ -14,20 +41,7 @@ export default App
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 ////////////////  T3   /////////////
 
