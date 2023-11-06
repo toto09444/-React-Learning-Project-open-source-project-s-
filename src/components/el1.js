@@ -13,9 +13,9 @@ const el1 = () => {
         </thead>
         <tbody>
             <tr>
-                <td>John Doe</td>
-                <td>30</td>
-                <td>New York</td>
+                <td>Imad</td>
+                <td>19</td>
+                <td>Casablanca </td>
             </tr>
             <tr>
                 <td>Jane Smith</td>
