@@ -11,7 +11,7 @@ const App = () => {
 export default App
 
 
-/*
+/* ////////////  UseEfect
 
 import React from 'react'
 import EffectHook from './components/effectHook'
@@ -70,39 +70,9 @@ const Root = () => {
 export default Root;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/////////////////
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
