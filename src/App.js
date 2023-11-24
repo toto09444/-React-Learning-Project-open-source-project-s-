@@ -1,17 +1,18 @@
 import React from 'react'
+import TodoList from './components/TodoList'
 
 const App = () => {
   return (
     <div>
-      
+      <TodoList />
     </div>
   )
 }
 
 export default App
 
-
-/* ////////////  UseEfect
+/*
+////////////  UseEfect
 
 import React from 'react'
 import EffectHook from './components/effectHook'
@@ -23,7 +24,6 @@ export default function App() {
     </div>
   )
 }
-
 */
 /*
 import TachesGestion from './components/tachesGestion'
@@ -45,7 +45,7 @@ export default App
 
 ////////////////  T3   /////////////
 
-       // Context Api
+// Context Api
 /*
 import React from "react";
 import { UserProvider, useUsers } from "./components/contextApi";
@@ -74,11 +74,8 @@ export default Root;
 
 */
 
-
-
-
 ////////////////  T1   /////////////
-    // base 1
+// base 1
 
 /* 
 import M1 from "./components/el1";
@@ -135,9 +132,8 @@ class test2 extends React.Component{
 
 export default test2; */
 
-
 ////////////////  T2   /////////////
-   // base 2
+// base 2
 /*
 import T from "./components/css-jsx";
 import N from "./components/nav";
