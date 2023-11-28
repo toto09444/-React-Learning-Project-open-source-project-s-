@@ -26,7 +26,8 @@ export default function AXIOS() {
 
   return (
     <div>
-      <button onClick={AfficheU}>
+      <br />
+      <button style={{backgroundColor:'teal'}} onClick={AfficheU}>
         <h3>clic ici pour afficher La liste des users</h3>
       </button>{' '}
       <br />
@@ -34,30 +35,32 @@ export default function AXIOS() {
       {users.map((e, i) => (
         <li key={i}>
           {' '}
-          <span style={{ color: 'red' }}>le Nom :</span> {e.name}{' '}
+          <span style={{ color: '#BE3144' }}>le Nom :</span> {e.name}{' '}
           <span style={{ color: 'teal' }}>le Prenom :</span> {e.username}{' '}
-          <button value={e.id} onClick={AfficheT} style={{ color: 'green' }}>
+          <button value={e.id} onClick={AfficheT} style={{backgroundColor:'#005B41', color: 'white' }}>
             Affiche les todo
           </button>
           {todo.length > 0 && e.id === todo[0].userId && (
             <ul>
               {todo.map((t, j) => (
-                <li key={j}>
-                  <span style={{ color: 'blue' }}>Todo :</span> {t.title}
-                </li>
+                <li key={j} style={{ position: 'relative', listStyleType: 'none' }}>
+                <span style={{ position: 'absolute', top: 0, right: 100, color: 'blue' }}>Todo: {t.title}</span> 
+              </li>
+              
               ))}
             </ul>
           )}
         </li>
       ))}
+      <br />
 
-      <button onClick={AfficheLT}>
+      <button style={{backgroundColor:'#F4F27E'}} onClick={AfficheLT}>
         <h3>clic ici pour afficher La liste des Tache</h3>
       </button>{' '}
       {listT.map((e, i) => (
         <li key={i}>
           {' '}
-          <span style={{ color: 'red' }}>le Nom :</span> {e.title}
+          <span style={{ color: '#BE3144' }}>Title :</span> {e.title}
         </li>
       ))}
     </div>

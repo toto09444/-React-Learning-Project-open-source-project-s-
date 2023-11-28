@@ -1,9 +1,9 @@
 import React from 'react'
-
+import AXIOS from './components/AXIOS'
 const App = () => {
   return (
     <div>
-      
+      <AXIOS/>
     </div>
   )
 }
