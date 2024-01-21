@@ -5,13 +5,25 @@ import { useDispatch, useSelector } from "react-redux";
 
 const App = () => {
   const resultat =useSelector((state)=>state.resultats)
+  const operation =useSelector((state)=>state.operation)
+  
   const [nb1,setNb1]=useState(0)
   const [nb2,setNb2]=useState(0)
   const dis =useDispatch()
   const SOMME=()=>{
     dis({type:'SOMME',payload:[nb1,nb2]})
-
   }
+  const SOUSTRA=()=>{
+    dis({type:'SOUSTRA',payload:[nb1,nb2]})
+  }
+  const MULTIP=()=>{
+    dis({type:'MULTIP',payload:[nb1,nb2]})
+  }
+  const DIVIS=()=>{
+    dis({type:'DIVIS',payload:[nb1,nb2]})
+  }
+
+
   return (
     <>
       <div className="container">
@@ -23,12 +35,12 @@ const App = () => {
         <br />
         <div className="container2">
           <button onClick={SOMME}> + </button>
-          <button> - </button>
-          <button> * </button>
-          <button> % </button>
+          <button onClick={SOUSTRA}> - </button>
+          <button onClick={MULTIP}> * </button>
+          <button onClick={DIVIS}> % </button>
         </div>
 
-        <h2> la resultat est {resultat}</h2>
+        <h2>{operation} = {resultat}</h2>
 
 
       </div>

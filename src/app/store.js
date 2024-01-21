@@ -1,16 +1,25 @@
 ///////////////////// Redux Test  2  MINI CALCULE////////////////////
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 
-const initialeState={operation:'',resultats:''}
-const reducer =(state=initialeState,{type,payload})=>{
-    switch (type){
+const initialeState = { operation: '', resultats: '' }
+const reducer = (state = initialeState, { type, payload }) => {
+    switch (type) {
         case 'SOMME':
-            return {resultats:Number(payload[0])+Number(payload[1])}
+            return { resultats: Number(payload[0]) + Number(payload[1]), operation: payload[0] + "+" + payload[1] }
+        case 'SOUSTRA':
+            return { resultats: Number(payload[0]) - Number(payload[1]), operation: payload[0] + "-" + payload[1] }
+
+        case 'MULTIP':
+            return { resultats: Number(payload[0]) * Number(payload[1]), operation: payload[0] + "*" + payload[1] }
+
+        case 'DIVIS':
+            return { resultats: Number(payload[0]) / Number(payload[1]), operation: payload[0] + "%" + payload[1] }
+
     }
     return state
 }
 
-const store =createStore(reducer)
+const store = createStore(reducer)
 
 export default store
 
