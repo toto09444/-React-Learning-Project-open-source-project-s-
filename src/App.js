@@ -1,14 +1,23 @@
-import React from 'react'
+import React from 'react';
+import {useSelector } from 'react-redux';
+
 
 const App = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const nb = useSelector((state) => state.counter);
 
-export default App
+  return (
+    
+      <div>
+        <h1>
+          hello {nb}
+        </h1>
+      </div>
+   
+  );
+};
+
+export default App;
+
 
 /*
 ////////////  UseEfect
@@ -76,7 +85,7 @@ export default Root;
 ////////////////  T1   /////////////
 // base 1
 
-/* 
+/*
 import M1 from "./components/el1";
 import M2 from './components/el2';
 import React from "react";
@@ -96,36 +105,36 @@ function test1() {
   let age = 19;
 
   return (
-  
+
     <div className="test1">
-       <EX0 />  
+       <EX0 />
      <h1>hello {Name}</h1>
       <br />
       <h2>{age >= 18 ? "vous êtes adulte" : "petit"}</h2>
       <M1/>
       <br />
-      <M2 Name="imad"  /> 
+      <M2 Name="imad"  />
       <M3  color='red' text='Add1'/>
 
      {
       <M3  color='green' text='Add2'/>
       <M3  color='teal' text='Add3'/>
-      <M3  color='yellow' text='Add4'/> 
-      
+      <M3  color='yellow' text='Add4'/>
+
     }
     <M4/>
     <EX0/>
     </div>
   );
 }
-export default test1; 
+export default test1;
 
   ///  Methode 2
 
 
 class test2 extends React.Component{
   render(){
-     return <h1>k</h1> 
+     return <h1>k</h1>
   }
 }
 
