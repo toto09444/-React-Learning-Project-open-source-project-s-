@@ -1,9 +1,21 @@
-import React from 'react';
-import {useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import {useDispatch, useSelector } from 'react-redux';
 
 
 const App = () => {
+  const [pas,setPas]=useState(0);
   const nb = useSelector((state) => state.counter);
+  const dis =useDispatch()
+  const Increment=()=>{
+    dis({type:'INC'})
+  }
+  const Decrement=()=>{
+    dis({type:'DEC'})
+  }
+  useEffect(()=>{
+    dis({type:'ADDN',payload:pas})
+  },[pas])
+
 
   return (
     
@@ -11,6 +23,13 @@ const App = () => {
         <h1>
           hello {nb}
         </h1>
+   
+        <button onClick={Increment}>increment</button>
+        <button onClick={Decrement}>Decrement</button>
+        <input type='number' value={pas} onChange={(e)=>setPas(e.target.value)} />
+
+        
+        
       </div>
    
   );
