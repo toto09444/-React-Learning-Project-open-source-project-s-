@@ -1,37 +1,85 @@
+///////////////////// Redux Test  2  MINI CALCULE////////////////////
+import {React,useState} from "react";
+import './style/app.css';
+import { useDispatch, useSelector } from "react-redux";
+
+const App = () => {
+  const resultat =useSelector((state)=>state.resultats)
+  const [nb1,setNb1]=useState(0)
+  const [nb2,setNb2]=useState(0)
+  const dis =useDispatch()
+  const SOMME=()=>{
+    dis({type:'SOMME',payload:[nb1,nb2]})
+
+  }
+  return (
+    <>
+      <div className="container">
+        <h1 className="Mini">Mini Calcule</h1>
+
+        <input type="text" placeholder="Entrer le 1 Nombre" value={nb1}  onChange={(e)=>setNb1(e.target.value)}/>
+        <br />
+        <input type="text" placeholder="Entrer le 2 Nombre" value={nb2}  onChange={(e)=>setNb2(e.target.value)} />
+        <br />
+        <div className="container2">
+          <button onClick={SOMME}> + </button>
+          <button> - </button>
+          <button> * </button>
+          <button> % </button>
+        </div>
+
+        <h2> la resultat est {resultat}</h2>
+
+
+      </div>
+    </>
+  )
+}
+export default App
+
+
+
+
+
+
+
+
+
+/*
 import React, { useEffect, useState } from 'react';
-import {useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const App = () => {
-  const [pas,setPas]=useState(0);
+  const [pas, setPas] = useState(0);
   const nb = useSelector((state) => state.counter);
-  const dis =useDispatch()
-  const Increment=()=>{
-    dis({type:'INC'})
+  const dis = useDispatch()
+  const Increment = () => {
+    dis({ type: 'INC' })
   }
-  const Decrement=()=>{
-    dis({type:'DEC'})
+  const Decrement = () => {
+    dis({ type: 'DEC' })
   }
-  useEffect(()=>{
-    dis({type:'ADDN',payload:pas})
-  },[pas])
+  useEffect(() => {
+    dis({ type: 'ADDN', payload: pas })
+  }, [pas])
 
 
   return (
-    
-      <div>
-        <h1>
-          hello {nb}
-        </h1>
-   
-        <button onClick={Increment}>increment</button>
-        <button onClick={Decrement}>Decrement</button>
-        <input type='number' value={pas} onChange={(e)=>setPas(e.target.value)} />
 
-        
-        
-      </div>
-   
+    <div>
+      <h1>
+        hello {nb}
+      </h1>
+
+      <button onClick={Increment}>increment</button>
+      <button onClick={Decrement}>Decrement</button>
+      <input type='number' value={pas} onChange={(e) => setPas(e.target.value)} />
+
+
+
+    </div>
+
   );
 };
 
