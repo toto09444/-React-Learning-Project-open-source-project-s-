@@ -1,5 +1,12 @@
 ///////////////////// Redux Test  3  MINI Game Number Film////////////////////
+import { createStore } from "redux";
 
+const initialeState ={number:0,film :''};
+const reducer = (state =initialeState,{type,payload})=>{
+    return state 
+}
+
+const store =createStore()
 
 
 
@@ -13,6 +20,7 @@
 
 
 ///////////////////// Redux Test  2  MINI CALCULE////////////////////
+/*
 import { createStore } from 'redux';
 
 const initialeState = { operation: '', resultats: '' }
