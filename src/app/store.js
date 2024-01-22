@@ -1,3 +1,17 @@
+///////////////////// Redux Test  3  MINI Game Number Film////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
 ///////////////////// Redux Test  2  MINI CALCULE////////////////////
 import { createStore } from 'redux';
 
