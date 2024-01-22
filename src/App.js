@@ -1,3 +1,46 @@
+import React, { useState } from "react";
+import './style/app.css';
+import { useDispatch, useSelector } from "react-redux";
+
+const App = () => {
+  const [number1, setNumber] = useState(0);
+  const film = useSelector((state) => state.film);
+  const N = useSelector((state) => state.number);
+  const dispatch = useDispatch();
+
+  const submit = () => {
+    dispatch({ type: 'submit', payload: number1 });
+  };
+
+  return (
+    <div>
+      <div className="container">
+        <h1>Enter a number and get FILM</h1>
+        <br />
+        <input type="text" value={number1} onChange={(e) => setNumber(e.target.value)} />
+        <h2>{film}</h2>
+        <h2>{N}</h2>
+        <button onClick={submit}>Submit</button>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 ///////////////////// Redux Test  2  MINI CALCULE////////////////////
 import {React,useState} from "react";
 import './style/app.css';
