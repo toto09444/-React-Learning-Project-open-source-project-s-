@@ -1,4 +1,20 @@
-///////////////////// Redux Test  3  MINI Game Number Film////////////////////
+///////////////////// Redux Test  3  MINI Game  Change my Color !////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////// Redux Test  3  MINI Game Number Film////////////////////
 import { createStore } from "redux";
 
 
