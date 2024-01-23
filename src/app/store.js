@@ -6,7 +6,8 @@ const reducer =(state=initialeState,{type,payload})=>{
     switch (type){
         case 'ChangeC':
             return {...state,color:payload || ''}
-
+        case 'ChangeT' :
+            return {...state,text:payload}
         default :
          return state
     }
