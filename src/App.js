@@ -25,7 +25,7 @@ const App = () => {
         <br />
         <input type="text" placeholder="put a text " value={utext} onChange={(e) => setUtext(e.target.value)} />
         <br />
-        <button onClick={ChangeC} >Change the color</button>
+        <button onClick={ChangeC} >Change the color</button><br/>
         <button onClick={ChangeT} >Change the text</button>
       </div>
     </>
