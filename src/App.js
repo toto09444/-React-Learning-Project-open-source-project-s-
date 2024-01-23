@@ -3,13 +3,14 @@
 import React ,{useState} from "react";
 import './style/app.css'
 const App = ()=>{
-
+const [ucolor,setUcolor]=useState('')
   return(
     <>
       <div className="container">
        <h1>Hello change me !</h1> 
 
-       <input type="text" placeholder="put a color "/> 
+       <input type="text" placeholder="put a color " value={ucolor} onChange={(e)=>setUcolor(e.target.value)}/> 
+      <button >Change the color</button>
       </div>
     </>
   )

@@ -20,7 +20,7 @@
 }
 
 button {
-    width: 50px;
+    width: max-content;
     height: 20px;
     border-radius: 10%;
     border: none;
