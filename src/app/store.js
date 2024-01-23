@@ -1,9 +1,15 @@
 ///////////////////// Redux Test  3  MINI Game  Change my Color !///////////////////
 import {createStore} from 'redux'
 
-const initialeState={color:'',text:''}
+const initialeState={color:'',text:'Hello change me !'}
 const reducer =(state=initialeState,{type,payload})=>{
-    return state
+    switch (type){
+        case 'ChangeC':
+            return {...state,color:payload || ''}
+
+        default :
+         return state
+    }
 }
 const store =createStore(reducer)
 export default  store

@@ -1,16 +1,32 @@
 ///////////////////// Redux Test  3  MINI Game  Change my Color !////////////////////
 
-import React ,{useState} from "react";
+import React, { useState } from "react";
+import {useDispatch, useSelector } from "react-redux";
 import './style/app.css'
-const App = ()=>{
-const [ucolor,setUcolor]=useState('')
-  return(
+
+const App = () => {
+  const [ucolor, setUcolor] = useState('')
+  const [utext, setUtext] = useState('')
+  const color=useSelector((state)=>state.color)
+  const text=useSelector((state)=>state.text)
+  const dipatch =useDispatch()
+  const ChangeC=()=>{
+    dipatch({type:'ChangeC',payload:ucolor})
+  }
+  const ChangeT=()=>{
+    dipatch({type:'ChangeT',payload:utext})
+  }
+  return (
     <>
       <div className="container">
-       <h1>Hello change me !</h1> 
+        <h1 style={{color:color}}>{text}</h1>
 
-       <input type="text" placeholder="put a color " value={ucolor} onChange={(e)=>setUcolor(e.target.value)}/> 
-      <button >Change the color</button>
+        <input type="text" placeholder="put a color " value={ucolor} onChange={(e) => setUcolor(e.target.value)} />
+        <br />
+        <input type="text" placeholder="put a text " value={utext} onChange={(e) => setUtext(e.target.value)} />
+        <br />
+        <button onClick={ChangeC} >Change the color</button>
+        <button onClick={ChangeT} >Change the text</button>
       </div>
     </>
   )
@@ -94,7 +110,7 @@ import { useDispatch, useSelector } from "react-redux";
 const App = () => {
   const resultat =useSelector((state)=>state.resultats)
   const operation =useSelector((state)=>state.operation)
-  
+
   const [nb1,setNb1]=useState(0)
   const [nb2,setNb2]=useState(0)
   const dis =useDispatch()
