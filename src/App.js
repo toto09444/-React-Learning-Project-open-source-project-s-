@@ -1,3 +1,47 @@
+///////////////////// Redux Test  3  MINI Game  Change my Color !////////////////////
+
+import React ,{useState} from "react";
+import './style/app.css'
+const App = ()=>{
+
+  return(
+    <>
+      <div className="container">
+       <h1>Hello change me !</h1> 
+
+       <input type="text" placeholder="put a color "/> 
+      </div>
+    </>
+  )
+}
+
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import React, { useState } from "react";
 import './style/app.css';
 import { useDispatch, useSelector } from "react-redux";

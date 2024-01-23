@@ -1,14 +1,12 @@
-///////////////////// Redux Test  3  MINI Game  Change my Color !////////////////////
+///////////////////// Redux Test  3  MINI Game  Change my Color !///////////////////
+import {createStore} from 'redux'
 
-
-
-
-
-
-
-
-
-
+const initialeState={color:'',text:''}
+const reducer =(state=initialeState,{type,payload})=>{
+    return state
+}
+const store =createStore(reducer)
+export default  store
 
 
 
