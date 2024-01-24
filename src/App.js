@@ -1,12 +1,57 @@
-import React from 'react'
-import TachesGestion from './components/tachesGestion'
+///////////////////// Redux Test  3  MINI Game  Change my Color !////////////////////
 
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import './style/app.css'
 
 const App = () => {
+  const [ucolor, setUcolor] = useState('')
+  const [utext, setUtext] = useState('')
+  const color = useSelector((state) => state.color)
+  const historiqueColor = useSelector((state) => state.hestoC)
+  const historiqueText = useSelector((state) => state.hestoT)
+  const text = useSelector((state) => state.text)
+  const dipatch = useDispatch()
+  const ChangeC = () => {
+    dipatch({ type: 'ChangeC', payload: ucolor })
+  }
+  const ChangeT = () => {
+    dipatch({ type: 'ChangeT', payload: utext })
+  }
   return (
-    <div>
-      <TachesGestion />
-    </div>
+    <>
+      <div className="container">
+        <h1 style={{ color: color }}>{text}</h1>
+
+        <input type="text" placeholder="put a color " value={ucolor} onChange={(e) => setUcolor(e.target.value)} />
+        <br />
+        <input type="text" placeholder="put a text " value={utext} onChange={(e) => setUtext(e.target.value)} />
+        <br />
+        <button onClick={ChangeC} >Change the color</button><br />
+        <button onClick={ChangeT} >Change the text</button>
+        <ul>
+         <h2>Color  historique</h2> 
+          {historiqueColor !== undefined && historiqueColor.length > 0 &&
+            historiqueColor.map((e, k) => (
+              <li key={k}>{e}</li>
+            ))
+          }
+
+          
+        </ul><br/>
+        <ul>
+         <h2>Text  historique</h2> 
+          {historiqueText !== undefined && historiqueText.length > 0 &&
+            historiqueText.map((e, k) => (
+              <li key={k}>{e}</li>
+            ))
+          }
+
+          
+        </ul>
+
+      </div>
+    </>
   )
 }
 
@@ -29,9 +74,192 @@ export default App
 
 
 
+
+
+
+
+
+
+
+/*
+import React, { useState } from "react";
+import './style/app.css';
+import { useDispatch, useSelector } from "react-redux";
+
+const App = () => {
+  const [number1, setNumber] = useState(0);
+  const film = useSelector((state) => state.film);
+  const N = useSelector((state) => state.number);
+  const dispatch = useDispatch();
+
+  const submit = () => {
+    dispatch({ type: 'submit', payload: number1 });
+  };
+
+  return (
+    <div>
+      <div className="container">
+        <h1>Enter a number and get FILM</h1>
+        <br />
+        <input type="text" value={number1} onChange={(e) => setNumber(e.target.value)} />
+        <h2>{film}</h2>
+        <h2>{N}</h2>
+        <button onClick={submit}>Submit</button>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+///////////////////// Redux Test  2  MINI CALCULE////////////////////
+import {React,useState} from "react";
+import './style/app.css';
+import { useDispatch, useSelector } from "react-redux";
+
+const App = () => {
+  const resultat =useSelector((state)=>state.resultats)
+  const operation =useSelector((state)=>state.operation)
+
+  const [nb1,setNb1]=useState(0)
+  const [nb2,setNb2]=useState(0)
+  const dis =useDispatch()
+  const SOMME=()=>{
+    dis({type:'SOMME',payload:[nb1,nb2]})
+  }
+  const SOUSTRA=()=>{
+    dis({type:'SOUSTRA',payload:[nb1,nb2]})
+  }
+  const MULTIP=()=>{
+    dis({type:'MULTIP',payload:[nb1,nb2]})
+  }
+  const DIVIS=()=>{
+    dis({type:'DIVIS',payload:[nb1,nb2]})
+  }
+
+
+  return (
+    <>
+      <div className="container">
+        <h1 className="Mini">Mini Calcule</h1>
+
+        <input type="text" placeholder="Entrer le 1 Nombre" value={nb1}  onChange={(e)=>setNb1(e.target.value)}/>
+        <br />
+        <input type="text" placeholder="Entrer le 2 Nombre" value={nb2}  onChange={(e)=>setNb2(e.target.value)} />
+        <br />
+        <div className="container2">
+          <button onClick={SOMME}> + </button>
+          <button onClick={SOUSTRA}> - </button>
+          <button onClick={MULTIP}> * </button>
+          <button onClick={DIVIS}> % </button>
+        </div>
+
+        <h2>{operation} = {resultat}</h2>
+
+
+      </div>
+    </>
+  )
+}
+export default App
+
+
+
+
+
+
+
+
+
+/*
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+
+const App = () => {
+  const [pas, setPas] = useState(0);
+  const nb = useSelector((state) => state.counter);
+  const dis = useDispatch()
+  const Increment = () => {
+    dis({ type: 'INC' })
+  }
+  const Decrement = () => {
+    dis({ type: 'DEC' })
+  }
+  useEffect(() => {
+    dis({ type: 'ADDN', payload: pas })
+  }, [pas])
+
+
+  return (
+
+    <div>
+      <h1>
+        hello {nb}
+      </h1>
+
+      <button onClick={Increment}>increment</button>
+      <button onClick={Decrement}>Decrement</button>
+      <input type='number' value={pas} onChange={(e) => setPas(e.target.value)} />
+
+
+
+    </div>
+
+  );
+};
+
+export default App;
+
+
+/*
+////////////  UseEfect
+
+import React from 'react'
+import EffectHook from './components/effectHook'
+
+export default function App() {
+  return (
+    <div>
+      <EffectHook />
+    </div>
+  )
+}
+*/
+/*
+import TachesGestion from './components/tachesGestion'
+
+
+const App = () => {
+  return (
+    <div>
+      <TachesGestion />
+    </div>
+  )
+}
+
+export default App
+
+
+
+*/
+
 ////////////////  T3   /////////////
 
-       // Context Api
+// Context Api
 /*
 import React from "react";
 import { UserProvider, useUsers } from "./components/contextApi";
@@ -56,47 +284,14 @@ const Root = () => {
 export default Root;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/////////////////
 
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////  T1   /////////////
-    // base 1
+// base 1
 
-/* 
+/*
 import M1 from "./components/el1";
 import M2 from './components/el2';
 import React from "react";
@@ -116,44 +311,43 @@ function test1() {
   let age = 19;
 
   return (
-  
+
     <div className="test1">
-       <EX0 />  
+       <EX0 />
      <h1>hello {Name}</h1>
       <br />
       <h2>{age >= 18 ? "vous êtes adulte" : "petit"}</h2>
       <M1/>
       <br />
-      <M2 Name="imad"  /> 
+      <M2 Name="imad"  />
       <M3  color='red' text='Add1'/>
 
      {
       <M3  color='green' text='Add2'/>
       <M3  color='teal' text='Add3'/>
-      <M3  color='yellow' text='Add4'/> 
-      
+      <M3  color='yellow' text='Add4'/>
+
     }
     <M4/>
     <EX0/>
     </div>
   );
 }
-export default test1; 
+export default test1;
 
   ///  Methode 2
 
 
 class test2 extends React.Component{
   render(){
-     return <h1>k</h1> 
+     return <h1>k</h1>
   }
 }
 
 export default test2; */
 
-
 ////////////////  T2   /////////////
-   // base 2
+// base 2
 /*
 import T from "./components/css-jsx";
 import N from "./components/nav";

@@ -5,8 +5,10 @@ import ReactPlayer from "react-player";
  // import C from '../assets/images/camera.png';
 const T = (arg) => {
     const im = {
-        width: '50px',
-        heightt: '50px'
+        width: '90px',
+        heightt: '90px'
+
+
     }
     
     const v1='https://www.youtube.com/watch?v=45QLb6M_6A0'
