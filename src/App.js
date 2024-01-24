@@ -1,4 +1,4 @@
-///////////////////// Redux Test////////////////////
+///////////////////// Redux Test  3  MINI Game  Change my Color !////////////////////
 
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ const App = () => {
   const [utext, setUtext] = useState('')
   const color = useSelector((state) => state.color)
   const historiqueColor = useSelector((state) => state.hestoC)
+  const historiqueText = useSelector((state) => state.hestoT)
   const text = useSelector((state) => state.text)
   const dipatch = useDispatch()
   const ChangeC = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <button onClick={ChangeC} >Change the color</button><br />
         <button onClick={ChangeT} >Change the text</button>
         <ul>
+         <h2>Color  historique</h2> 
           {historiqueColor !== undefined && historiqueColor.length > 0 &&
             historiqueColor.map((e, k) => (
               <li key={k}>{e}</li>
