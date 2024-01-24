@@ -1,7 +1,7 @@
 ///////////////////// Redux Test  3  MINI Game  Change my Color !///////////////////
 import {createStore} from 'redux'
 
-const initialeState={color:'',text:'Hello change me !'}
+const initialeState={color:'',text:'Hello change me !',hestoC:[]}
 const reducer =(state=initialeState,{type,payload})=>{
     switch (type){
         case 'ChangeC':
