@@ -36,6 +36,18 @@ const App = () => {
               <li key={k}>{e}</li>
             ))
           }
+
+          
+        </ul><br/>
+        <ul>
+         <h2>Text  historique</h2> 
+          {historiqueText !== undefined && historiqueText.length > 0 &&
+            historiqueText.map((e, k) => (
+              <li key={k}>{e}</li>
+            ))
+          }
+
+          
         </ul>
 
       </div>
