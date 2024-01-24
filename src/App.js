@@ -1,4 +1,4 @@
-///////////////////// Redux Test  3  MINI Game  Change my Color !////////////////////
+///////////////////// Redux Test////////////////////
 
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
